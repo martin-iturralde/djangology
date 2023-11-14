@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+}
+
+.header {
+  background: #2E86C1;
+  color: #FFF;
+  padding: 40px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 48px;
+}
+
+h2, h3, h4, h5 {
+  text-align: center;
+}
+
+.navbar {
+  background-color: #34495E;
+  overflow: hidden;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+hr {
+  background-color: #BDC3C7;
+  border: none;
+  height: 1px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #FFF;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  background-color: #57606F;
+  color: #FFF;
+}
+
+.navbar a.active {
+  background-color: #3498DB;
+  color: #FFF;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  background-color: #ECF0F1;
+  flex: 30%;
+  padding: 20px;
+}
+
+.main {
+  background-color: #FFF;
+  flex: 70%;
+  padding: 20px;
+}
+
+.fakeimg {
+  background-color: #95A5A6;
+  padding: 20px;
+  width: 100%;
+}
+
+.footer {
+  background: #BDC3C7;
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.center {
+  border-radius: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.button {
+  background-color: #27AE60;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button2 { background-color: #2980B9; }
+.button3 { background-color: #E74C3C; }
+.button4 { background-color: #F2F3F4; color: #333; }
+.button5 { background-color: #2C3E50; }
+
+input[type=text], select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 12px 16px;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: #27AE60;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin: 8px 0;
+  padding: 12px 16px;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  background-color: #219150;
+}
+
+.fakediv {
+  background-color: #ECF0F1;
+  border-radius: 8px;
+  padding: 20px;
+}

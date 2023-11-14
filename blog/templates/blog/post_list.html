@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="row">
+        <div class="side">
+          <h2>ANIMAUX</h2>
+          {% for character in characters %}
+                <h3>{{ character.character }}</h3>
+                <img src="{{ character.photo }}" class="center">
+                <h5><b>Name:</b> <i>{{ character.id_character |linebreaksbr }}</i></h5>
+                <h5><b>type:</b> <i>{{ character.type |linebreaksbr }}</i></h5>
+                <h5><b>race:</b> <i>{{ character.race |linebreaksbr }}</i></h5>
+                <h5><b>etat:</b> <i>{{ character.etat |linebreaksbr }}</i></h5>
+                <h5><b>lieu:</b> <i>{{ character.lieu |linebreaksbr }}</i><h5>
+                <button class="button button5"><a href="{% url 'character_detail' id_character=character.id_character %}">changer lieu</a></button>
+                <hr>
+          {% endfor %}
+        </div>
+        <div class="main">
+          <h2>ÉQUIPEMENT</h2>
+          {% for equipement in equipements %}
+                <h3>{{ equipement.id_equip }}</h3>
+                <img src="{{ equipement.photo }}" class="center">
+                {% if equipement.disponibilite == 'libre' %}
+                        <h4 style="color:green;"><b>disponibilite: </b><i>{{ equipement.disponibilite |linebreaksbr }}</i></h4>
+                {% endif %}
+                {% if equipement.disponibilite == 'occupe' %}
+                        {% for character in characters %}
+                                    {% if character.lieu.id_equip == equipement.id_equip %}
+                                          <h4 style="color:red;"><b>disponibilite: </b><i>{{ equipement.disponibilite |linebreaksbr }}</i></h4>
+                                          <h4 style="color:red;"><b>animal: </b><i>{{ character.id_character |linebreaksbr }}</i></h4>
+                                    {% endif %}
+                              {% endfor %}
+                        <!-- h4 style="color:red;"><b>disponibilite: </b><i>{{ equipement.disponibilite |linebreaksbr }}</i></h4 !-->
+                {% endif %}
+                <hr>
+          {% endfor %}
+      </div>
+</div>
+{% endblock %}
